@@ -1,0 +1,42 @@
+<div class="index-layout vfluid">
+    <ul class="task-list list-unstyled">
+        <li class="task" v-repeat="task:taskList" v-transition>
+            <div class="task-item"  v-class="task.status">
+                <div class="task-progress hide"></div>
+                <div class="task-icon">
+                    <div class ="icon-text {{task.extension | ext_class}}">
+                        <span class="icon-title">{{task.icon_name}}</span>
+                    </div>
+                </div>
+                <div class="task-info">
+                    <div class="task-name" title="{{task.filePath}}">{{task.fileName}}</div>
+                    <div class="task-detail">
+                        <span v-if="task.status !=='error'">{{task.filePath}}</span>
+                        <span v-if="task.status =='error'">{{task.errMsg}}</span>
+                    </div>
+                </div>
+                <div class="task-action">
+                    <button type="button" class="btn btn-info btn-xs pd2"
+                        title="{{'text.taskConfig' | tr}}"
+                        v-on="click: config($index) "
+                        >
+                        <i class="fa fa-fw fa-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-info btn-xs pd2"
+                        title="{{'text.location' | tr}}"
+                        v-if="task.distFile != ''"
+                        v-on="click: revealInFinder(task.distFile) "
+                        >
+                        <i class="fa fa-fw fa-folder-open"></i>
+                    </button>
+                    <button class="btn btn-danger btn-xs btn-task-remove"
+                                title="{{'text.remove' | tr}}"
+                                v-on="click: remove($index) "
+                            ><i class="fa fa-fw fa-remove"></i></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="modal show" v-if="activeCount">
+    </div>
+</div>

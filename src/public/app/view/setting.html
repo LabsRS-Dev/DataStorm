@@ -1,0 +1,52 @@
+<div class="modal small-dialog" id="settingDialog" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{'text.settings' | tr}}</h4>
+        <button class="btn btn-danger btn-xs btn-modal-close" v-on="click:hide">
+            <i class="fa fa-fw fa-remove"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group nv-group nv-dist">
+            <label class="control-label nv-name">{{'text.output_directory' | tr}}</label>
+            <div class="nv-value">
+                <input type="text" class="form-control" readonly v-model="options.dist">
+            </div>
+            <div class="nv-addin">
+              <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-sm" v-on="click:selectFolder" title="{{'native.select_dir_title' | tr}}"><i class="fa fa-fw fa-folder-open"></i></button>
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="dropdown" v-if="recents.length">
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li v-repeat="recents" title="{{path}}"><a href="#" v-on="click:selectRecent(path)">{{name}}</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group nv-group">
+            <label class="control-label nv-name">{{'text.override_if_exists' | tr}}</label>
+            <div class="nv-value">
+                <label class="switch-light switch-candy">
+                  <input type="checkbox" v-model="options.override_if_exists"></input>
+                  <span>
+                    <span>ON</span>
+                    <span>OFF</span>
+                  </span>
+                  <a></a>
+                </label>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm"  v-on="click:hide">{{'text.cancel' | tr}}</button>
+        <button type="button" class="btn btn-primary btn-sm"  v-on="click:save">{{'text.save' | tr}}</button>
+      </div>
+    </div>
+  </div>
+</div>

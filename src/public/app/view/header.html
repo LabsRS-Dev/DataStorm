@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="pd-v5 clearfix">
+        <div class="pull-left">
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-default btn-sm pd2" tag-action="setting">
+                <span class="glyphicon glyphicon-cog"></span>
+                <span>{%=jet.tr('text', 'settings')%}</span>
+            </button>
+            <button class="btn btn-default btn-sm pd2 frontend" >
+                <span class="glyphicon glyphicon-flag"></span>
+                <span>{%=jet.tr('local', curLang)%}</span>
+                <select id="sel_local" class="backend">
+                    {% jet.each(local, function(id, it){ %}
+                        <option value="{%=id%}">{%=it%}</option>
+                    {% }); %}
+                </select>
+            </button>
+        </div>
+    </div>
+    <hr class="header-hr"/>
+</div>

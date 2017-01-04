@@ -1,0 +1,61 @@
+<div class="modal small-dialog" id="taskConfigDialog" tabindex="-2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{'text.taskConfigTitle' | tr}}</h4>
+        <button class="btn btn-danger btn-xs btn-modal-close" v-on="click:hide">
+            <i class="fa fa-fw fa-remove"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal">
+          <h4><strong>{{'text.it2csv_config' | tr}}</strong></h4>
+          <div class="form-group nv-grou">
+            <label class="control-label nv-name">{{'text.it2csv_sortFields' | tr}}</label>
+            <div class="nv-value">
+                <input type="text" class="form-control" v-model="options.it2csv_sortFields" placeholder="eg. order.id" />
+            </div>
+            <div class="nv-addin">
+              <button type="button" class="btn btn-danger btn-xs" v-on="click:goHelp('it2csv_sortFields')" title="{{'text.online_seeHelp' | tr}}"><i class="fa fa-fw fa-question"></i></button>
+            </div>
+          </div>
+
+          <div class="form-group nv-grou">
+            <label class="control-label nv-name">{{'text.it2csv_separator' | tr}}</label>
+            <div class="nv-value">
+                <input type="text" class="form-control" v-model="options.it2csv_separator" placeholder="eg. ,"/>
+            </div>
+            <div class="nv-addin">
+              <button type="button" class="btn btn-danger btn-xs" v-on="click:goHelp('it2csv_separator')" title="{{'text.online_seeHelp' | tr}}"><i class="fa fa-fw fa-question"></i></button>
+            </div>
+          </div>
+
+          <div class="form-group nv-group">
+            <label class="control-label nv-name">{{'text.it2csv_useComplexJSONEngine' | tr}}</label>
+            <div class="nv-value">
+                <label class="switch-light switch-candy">
+                  <input type="checkbox" v-model="options.it2csv_useComplexJSONEngine"/>
+                  <span>
+                    <span>ON</span>
+                    <span>OFF</span>
+                  </span>
+                  <a></a>
+                </label>
+            </div>
+            <div class="nv-addin">
+              <button type="button" class="btn btn-danger btn-xs" v-on="click:goHelp('it2csv_useComplexJSONEngine')" title="{{'text.online_seeHelp' | tr}}"><i class="fa fa-fw fa-question"></i></button>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm"  v-on="click:hide">{{'text.cancel' | tr}}</button>
+        <button type="button" class="btn btn-primary btn-sm"  v-on="click:save">{{'text.save' | tr}}</button>
+      </div>
+    </div>
+  </div>
+</div>

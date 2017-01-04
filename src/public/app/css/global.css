@@ -1,0 +1,107 @@
+/*-------------------------------------------------------box-sizing */
+/*
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+*/
+*{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*-------------------------------------------------------clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clipfix {
+    overflow: hidden;
+}
+/*-------------------------------------------------------pull */
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+/*-------------------------------------------------------fixed */
+.fixed-top,
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+.fixed-top {
+  top: 0;
+}
+.fixed-bottom {
+  bottom: 0;
+}
+
+.fixed-left,
+.fixed-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+.fixed-left {
+  left: 0;
+}
+.fixed-right {
+  right: 0;
+}
+/*-------------------------------------------------------Padding */
+.pd5 {
+    padding:5px;
+}
+.pd2 {
+    padding:2px;
+}
+.pd-h5 {
+    padding-left:5px;
+    padding-right:5px;
+}
+.pd-h2 {
+    padding-left:2px;
+    padding-right:2px;
+}
+.pd-v5 {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.pd-v2 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+/*-------------------------------------------------------layout overview */
+.frontend {
+    position: relative;
+    overflow: hidden;
+}
+
+.backend {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+/*-------------------------------------------------------border-left */
+.border-l4 {
+    border-left: 4px solid #1a7ab9;
+}

@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="pd-v5 clearfix">
+        <div class="pull-left">
+            <button type="button" class="btn btn-primary btn-sm pd2" tag-action="add">
+                <span class="glyphicon glyphicon-plus"></span>
+                <span>{%=jet.tr('text', 'import_file')%}</span>
+            </button>
+        </div>
+        <div class="pull-right" style="margin-right: 4px">
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="json" title=".json file">
+                <span>JSON</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="xml" title=".xml file">
+                <span>XML</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="csv" title=".csv file">
+                <span>CSV/Excel</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="yml" title=".yml file">
+                <span>YML</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="plist" title=".plist file">
+                <span>PLIST</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="ini" title=".ini file">
+                <span>INI</span>
+            </button>
+            <button type="button" class="btn btn-primary btn-xs pd5" tag-action-convert="properties" title=".properties file">
+                <span>Properties</span>
+            </button>
+            <button class="btn btn-danger btn-xs btn-task-clear pd-h5"
+                title="{%=jet.tr('text', 'remove')%}"
+                tag-action="clear"
+                ><i class="glyphicon glyphicon-trash"></i></button>
+        </div>
+    </div>
+    <hr class="header-hr"/>
+</div>
